@@ -1,4 +1,4 @@
-name: Run Code
+name: Task1
 
 on:
   push:
