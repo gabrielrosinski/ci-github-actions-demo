@@ -1,7 +1,7 @@
 import unittest
 from io import StringIO
 from unittest.mock import patch
-from app import run_test
+from main import run_test
 
 class TestRunTest(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
