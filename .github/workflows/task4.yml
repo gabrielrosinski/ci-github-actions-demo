@@ -8,12 +8,16 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        python: ['3.7', '3.8', '3.9', '3.10']
         os: [ubuntu-latest, windows-latest]
+        python: ['3.8', '3.9', '3.10']
+        include:
+          - os: ubuntu-22.04
+            python: '3.7'   # only this combo gets 3.7
+            
     
     steps:
       - name: Checkout code
