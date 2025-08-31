@@ -13,13 +13,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - uses: setup-python@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
           
       - name: Install dependencies
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: finish
         run: |
